@@ -1,0 +1,493 @@
+@charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Serif JP', serif;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding-top: 0;
+  z-index: 1;
+}
+
+h2 {
+  margin: 0;
+}
+
+div {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 140px;
+  width: 100%;
+  background-color: white;
+  opacity: .9;
+  z-index: 99;
+}
+
+header .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 140px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.container {
+  margin: 0 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative;
+}
+
+.headerNav ul li {
+  list-style: none;
+}
+
+.headerNav {
+  position: fixed;
+  right: -250px;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  padding-top: 40px;
+  background-color: rgba(157, 237, 248, 0.8);
+  -webkit-transition: all .6s;
+  transition: all .6s;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.headerNav .navList {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: block;
+}
+
+.headerNav .navList .navItem {
+  padding: 1rem 1rem 0;
+}
+
+.headerNav .navList .navItem a {
+  display: block;
+  border-bottom: 1px solid #eee;
+  color: #707070;
+  padding: 4rem 0 1rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mobile_menu_button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  z-index: 300;
+}
+
+.mobile_menu_button .hamburger_line {
+  position: absolute;
+  left: 8px;
+  width: 25px;
+  height: 1px;
+  background-color: #111;
+  -webkit-transition: all .6s;
+  transition: all .6s;
+}
+
+.mobile_menu_button .hamburger_line_1 {
+  top: 20px;
+}
+
+.mobile_menu_button .hamburger_line_2 {
+  top: 26px;
+}
+
+.mobile_menu_button .hamburger_line_3 {
+  top: 32px;
+}
+
+.black-bg {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden;
+  /* 非表示にしておきます */
+  -webkit-transition: all .6s;
+  transition: all .6s;
+  cursor: pointer;
+}
+
+.nav-open .headerNav {
+  right: 0;
+}
+
+.nav-open .black-bg {
+  opacity: .8;
+  visibility: visible;
+}
+
+.nav-open .hamburger_line_1 {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 25px;
+}
+
+.nav-open .hamburger_line_2 {
+  width: 0;
+  left: 50%;
+}
+
+.nav-open .hamburger_line_3 {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 25px;
+}
+
+.menu {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 60px;
+  display: none;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    color: red;
+    opacity: 1;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    color: red;
+    opacity: 1;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+}
+
+.menu .home::after {
+  content: "(now)";
+  color: red;
+  -webkit-animation: rotate 2s cubic-bezier(1, 1, 0.02, 0.04) 3;
+          animation: rotate 2s cubic-bezier(1, 1, 0.02, 0.04) 3;
+}
+
+.menu li :hover {
+  color: #837f7f;
+}
+
+.menu ul li {
+  margin-right: 50px;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+  font-size: 18px;
+  font-family: 'Noto Serif JP', serif;
+}
+
+.menu ul li .bx {
+  font-size: 30px;
+  vertical-align: middle;
+}
+
+.menu ul li a {
+  list-style-type: none;
+  color: black;
+  text-decoration: none;
+}
+
+.menu ul li + li {
+  border-left: 1px solid black;
+}
+
+main {
+  padding: 10%;
+}
+
+.class1 {
+  height: 100vh;
+  padding: 20px;
+  width: 90%;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px -10px 20px #979292;
+          box-shadow: 10px -10px 20px #979292;
+  background-color: aliceblue;
+  margin: 10% auto;
+  z-index: 10;
+}
+
+.class1 .wrapper {
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+  opacity: 0;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+
+.class1 .wrapper.active {
+  opacity: 1;
+}
+
+.class1 .wrapper h1 {
+  text-align: center;
+  padding: 5% 0;
+}
+
+.class1 .wrapper ul {
+  list-style: none;
+  height: 60%;
+}
+
+.class1 .wrapper ul li {
+  font-size: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#scroll {
+  background-color: aqua;
+  padding: 20px;
+  position: fixed;
+  right: 50px;
+  bottom: 100px;
+  border-radius: 5px;
+  z-index: 9000;
+  opacity: 0;
+}
+
+.class2 {
+  width: 90%;
+  height: 100vh;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px -10px 20px #979292;
+          box-shadow: 10px -10px 20px #979292;
+  background-color: aliceblue;
+  margin: 0 auto;
+  z-index: 10;
+  margin-top: 10%;
+  font-size: 20px;
+}
+
+.class2 .class_top h1 {
+  text-align: center;
+}
+
+.class2 .table1 {
+  padding-top: 10%;
+  margin: 0 auto;
+  font-size: 22px;
+  width: 70%;
+}
+
+.class2 .table1 table {
+  border-collapse: collapse;
+}
+
+.class2 .table1 table th {
+  border: solid 2px black;
+  text-align: center;
+}
+
+.class2 .table1 table td {
+  border: solid 2px black;
+}
+
+.class2 .table2 {
+  padding-top: 10%;
+  margin: 0 auto;
+  font-size: 22px;
+  width: 70%;
+}
+
+.class2 .table2 table {
+  border-collapse: collapse;
+}
+
+.class2 .table2 table th {
+  border: solid 2px black;
+  text-align: center;
+}
+
+.class2 .table2 table td {
+  border: solid 2px black;
+}
+
+@media screen and (min-width: 1050px) {
+  .menu {
+    display: block;
+  }
+  .mobile_menu_button {
+    background-color: unset;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  main .class1 {
+    height: 90vh;
+  }
+  main .class1 .wrapper {
+    width: 82%;
+  }
+  main .class1 .wrapper ul {
+    margin-top: 5%;
+  }
+  main .class1 .wrapper ul li {
+    font-size: 25px;
+  }
+  main .class2 {
+    height: 116vh;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  main .class1 {
+    height: 70vh;
+  }
+  main .class2 {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  main .class1 {
+    height: 80vh;
+    margin: 20% 0;
+  }
+  main .class1 .wrapper ul li {
+    font-size: 21px;
+  }
+  main .class2 {
+    height: 110vh;
+  }
+  main .class2 .table1 table {
+    font-size: 18px;
+  }
+  main .class2 .table2 table {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  header {
+    height: 70px;
+  }
+  header .container .header-left .logo {
+    height: 70px;
+  }
+  .headerNav .navList {
+    height: 110%;
+  }
+  .headerNav .navList .navItem {
+    height: 14%;
+  }
+  main .class1 {
+    height: 90vh;
+  }
+  main .class1 .wrapper {
+    width: 100%;
+  }
+  main .class1 .wrapper ul {
+    padding-left: 0;
+  }
+  main .class1 .wrapper ul li {
+    font-size: 16px;
+  }
+  main .class2 .table1 table {
+    font-size: 16px;
+  }
+  main .class2 .table2 table {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  main .class1 .wrapper ul li {
+    font-size: 16px;
+  }
+  main .class2 {
+    height: 128vh;
+  }
+  main .class2 .table1 table th {
+    width: 45%;
+  }
+  main .class2 .table2 table th {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  main .class2 .table1 table {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  main .class1 .wrapper ul li {
+    font-size: 13px;
+  }
+  main .class2 {
+    height: 160vh;
+  }
+}
+/*# sourceMappingURL=style.css.map */
